@@ -1,5 +1,5 @@
-import * as BABYLON from "@babylonjs/core";
-import "@babylonjs/loaders/glTF";
+// import * as BABYLON from "@babylonjs/core";
+// import "@babylonjs/loaders/glTF";
 
 const canvas = document.getElementById("canvasRobo1");
 const engine = new BABYLON.Engine(canvas);
