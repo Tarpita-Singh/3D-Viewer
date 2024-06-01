@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>3D-Viewer</title>
+  </head>
+  <body>
+    <main>
+      <section id="section1">
+        <h1>3D - VIEWER</h1>
+        <p>
+          View 3D models on the go ! Upload your custom files or explore 3D
+          Gaussian Splatting models from our library.
+        </p>
+      </section>
+
+      <canvas id="canvasRobo1"></canvas>
+      <script type="module" src="/robot1.js"></script>
+    </main>
+    <main>
+      <section id="section2">
+        <h1>LIBRARY</h1>
+        <p>Click open to access full 3D views of the models.s</p>
+
+        <div id="row1">
+          <div id="card">
+            <span>Book Store</span>
+            <img src="./images/galaxy1.jpg" alt="book_store" />
+            <br />
+            <button>View 3D!</button>
+          </div>
+          <div id="card">
+            <span>Military Museum</span>
+            <img src="./images/museum.png" alt="book_store" />
+            <br />
+            <button onclick="window.location.href='./museum.html';">
+              View 3D!
+            </button>
+          </div>
+          <div id="card">
+            <span>Super Market</span>
+            <img src="./images/galaxy1.jpg" alt="book_store" />
+            <br />
+            <button>View 3D!</button>
+          </div>
+        </div>
+
+        <div id="row1">
+          <div id="card">
+            <span>T34 Tank</span>
+            <img src="./images/galaxy1.jpg" alt="book_store" />
+            <br />
+            <button>View 3D!</button>
+          </div>
+          <div id="card">
+            <span>Wine Store</span>
+            <img src="./images/wine_store.png" alt="book_store" />
+            <br />
+            <button onclick="window.location.href='./wine_store.html';">
+              View 3D!
+            </button>
+          </div>
+          <div id="card">
+            <span>Xmas Mall</span>
+            <img src="./images/xmas_mall.png" alt="book_store" />
+            <br />
+            <button onclick="window.location.href='./mall.html';">View 3D!</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <main>
+      <section id="section3">
+        <h1>UPLOAD</h1>
+        <p>Upload your custom Gaussian splat files here.</p>
+        <div id="row1">
+          <div id="card2">
+            <span>View a .splat file</span>
+            <br />
+            <!-- <form class="form" id="myForm">
+              <input type="file" id="inpFile" name="inpFile" />
+              <button type="submit">Upload File</button>
+            </form> -->
+            <form
+              id="myForm"
+              action="http://localhost/tarpitaPrograms/Babylon_Project/viewer/upload.php"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <input type="file" name="fileToUpload" id="fileToUpload" />
+              <input
+                type="submit"
+                value="Upload File"
+                name="submit"
+                id="kill_me"
+              />
+              <br />
+            </form>
+            <!-- <button onclick="window.location.href='./upload.html';" id="open">
+              Open
+            </button> -->
+            <!-- <button id="open">Open</button> -->
+            <script type="module" src="/main.js"></script>
+          </div>
+          <!-- <div id="card2">
+            <span>view a .gltf file</span>
+            <br /> -->
+            <!-- <form id ="myForm">
+              <input type="file" id ="inpFile">
+              <button type="submit">Upload File</button>
+            </form> -->
+            <!-- </div> -->
+          <!-- </div>
+        </div> -->
+      </section>
+    </main>
+
+    <!-- <script>
+      const myForm = document.getElementById("myForm");
+      const inpFile = document.getElementById("inpFile");
+
+      myForm.addEventListener("submit", (e) => {
+        e.preventDefault(); // page refreshing or redirecting
+
+        const endpoint = "upload.php";
+        const formData = new FormData();
+
+        formData.append("inpFile", inpFile.files[0]);
+
+        // console.log(inpFile.files);
+
+        fetch(endpoint, {
+          method: "POST",
+          body: formData,
+        }).catch(console.error);
+
+        // console.log(formData);
+      });
+    </script> -->
+
+    <script src="https://unpkg.com/earcut@2.2.4/dist/earcut.min.js"></script>
+  </body>
+</html>
